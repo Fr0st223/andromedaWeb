@@ -172,7 +172,7 @@ header .top-bar span {
     vertical-align: middle;
 }
 
-.navbar-toogleButton .nav-link {
+.navbar-toggleButton .nav-link {
     font-family: 'MassEffect123-Light', 'Lato', 'Roboto', 'Arial', sans-serif;
     text-decoration: none;
         
@@ -182,42 +182,43 @@ header .top-bar span {
     font-size: 70%;
 }
     
-    .navbar-toogleButton .nav-link:hover {color: rgba(255, 255, 255, 1);}
+    .navbar-toggleButton .nav-link:hover {color: rgba(255, 255, 255, 1);}
     
-    .navbar-toogleButton .nav-link i {
+    .navbar-toggleButton .nav-link i {
     margin: -4px 0 0 6px;
     vertical-align: middle;
 }
 
 
-.main-nav .navbar-toogleButton {
+.main-nav .navbar-toggleButton {
     margin-left: 120px;
     padding: 5px;
     -webkit-appearance: none;
+    -moz-appearance: none;
 }   
 
-.main-nav .navbar-light .navbar-toogleButton-mobile {
+
+.main-nav .navbar-light .navbar-toggleButton-mobile {
     color: rgba(255, 255, 255, 0.5);
     padding-top: 2px;
     display: none;
 }
 
+.main-nav .navbar-toggleButton:active span[class*="-mobile"]
+{
+    color: rgba(255, 255, 255, 1);
+}
 
-.main-nav .navbar-light .navbar-toogleButton-normal {
+.main-nav .navbar-light .navbar-toggleButton-normal {
     display: inline-block;
     padding: 8px 2px 0 2px;
     cursor: pointer;
 }
 
-.navbar-toogleButton-normal:hover {
-    color: rgba(255, 255, 255, 1);
-    color: #fff;
-}
-
 
 
 /* -------------------------------- */
-/* Responsive queries */
+/* Responsive */
 /* -------------------------------- */
 
 
@@ -228,8 +229,19 @@ header .top-bar span {
     .main-nav {height: 60px; background-color: #000;}
     .main-nav .navbar-logo {height: 35px;}
     
-    .main-nav .navbar-light .navbar-toogleButton-normal {display: none;}
-    .main-nav .navbar-light .navbar-toogleButton-mobile {display: inline-block;}
+    .main-nav .navbar-light .navbar-toggleButton-normal {display: none;}
+    .main-nav .navbar-light .navbar-toggleButton-mobile {display: inline-block;}
+    
+     /* Workaround for IE :active bug */
+    .main-nav .navbar-toggleButton:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
     
 }
 
@@ -245,9 +257,19 @@ header .top-bar span {
     .main-nav-links .nav-item .nav-link {font-size: 50%;}   
     .main-nav-links .nav-item {padding-right: 10px;}
   
-    .main-nav .navbar-light .navbar-toogleButton-normal {display: none;}
-    .main-nav .navbar-light .navbar-toogleButton-mobile {display: inline-block;}
+    .main-nav .navbar-light .navbar-toggleButton-normal {display: none;}
+    .main-nav .navbar-light .navbar-toggleButton-mobile {display: inline-block;}
     
+    /* Workaround for IE :active bug */
+    .main-nav .navbar-toggleButton:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
      
 }
 
