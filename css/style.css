@@ -1,0 +1,282 @@
+@import url('../css/MassEffect123.min.css');
+
+
+
+/* -------------------------------- */
+/* Main rules */
+/* -------------------------------- */
+
+html,
+body {
+    font-family: 'Lato', 'Roboto', 'Arial', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 18px;
+    letter-spacing: .2px;
+    text-rendering: optimizeLegibility;
+    color: #1a1a1a;
+}
+
+h1 {
+    font-size: 130%;
+}
+
+h2 {
+    font-size: 105%;
+}
+
+h3 {
+    font-size: 90%;
+}
+
+p {
+    font-size: 50%;
+}
+
+*,
+*:before, 
+*:after {
+    box-sizing: border-box;
+}
+
+
+/* -------------------------------- */
+/* Classes rules */
+/* -------------------------------- */
+
+.no-padding {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.wrapper {
+    background-color: aliceblue;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* -------------------------------- */
+/* Header rules */
+/* -------------------------------- */
+
+header {
+    height: 100vh;
+    background-image:url("../img/img_hero_xlarge.jpg");
+    background-position: top center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+header .container {
+    padding: 0;
+    margin: 0;
+}
+
+header .row.top-bar,
+header .row.top-bar div[class*="top-bar-"] {
+    min-height: 40px;
+    background-color: #151515;
+}
+
+
+/* -------------------------------- */
+/* Upper navbar rules */
+/* -------------------------------- */
+
+
+header .top-bar span {
+    color: #000;
+    font-size: 65%;
+    padding: 0 5px;
+    vertical-align: middle;
+}
+
+.top-bar-left {
+    padding: 0;
+    border-right: 0.03em solid rgba(90, 90, 90, 0.38);
+    float: left;
+}
+
+.top-bar-right ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+.top-bar-right ul li {
+    padding: 0 20px;
+    opacity: 0.75;
+    font-size: 90%;
+    display: inline-block;
+}
+
+.top-bar-right ul li a {
+    text-decoration: none;
+    color: #bebebe;
+    transition: color 0.3s;
+}
+
+.top-bar-right ul li a:hover {
+    opacity: 1.0;
+    color: #ffffff;
+}
+
+.top-bar-right {
+    padding: 0;
+    border-left: 0.03em solid rgba(90, 90, 90, 0.38);
+    float: right;
+}
+
+
+/* -------------------------------- */
+/* Main navbar rules */
+/* -------------------------------- */
+
+
+.main-nav {
+    background: linear-gradient(to top, transparent 0, rgba(0,0,0,.7) 80px, rgba(0,0,0,.8) 120px); 
+    height: 100px;
+}
+
+.main-nav .navbar-logo {
+    height:  50px;
+    width: auto;
+}
+
+
+.main-nav-links {
+    margin-left: 40px;
+}
+
+.main-nav-links .nav-item {
+    padding-right: 15px;
+}
+
+.main-nav-links .nav-item .nav-link {
+    font-family: 'MassEffect123-Light', 'Lato', 'Roboto', 'Arial', sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    transition: color 0.3s;
+    font-size: 95%;
+}
+
+.main-nav-links .nav-item .nav-link:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
+.main-nav-links .nav-item .nav-link i {
+    margin: -4px 0 0 6px;
+    vertical-align: middle;
+}
+
+.navbar-toogleButton .nav-link {
+    font-family: 'MassEffect123-Light', 'Lato', 'Roboto', 'Arial', sans-serif;
+    text-decoration: none;
+        
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    transition: color 0.3s;
+    font-size: 70%;
+}
+    
+    .navbar-toogleButton .nav-link:hover {color: rgba(255, 255, 255, 1);}
+    
+    .navbar-toogleButton .nav-link i {
+    margin: -4px 0 0 6px;
+    vertical-align: middle;
+}
+
+
+.main-nav .navbar-toogleButton {
+    margin-left: 120px;
+    padding: 5px;
+    -webkit-appearance: none;
+}   
+
+.main-nav .navbar-light .navbar-toogleButton-mobile {
+    color: rgba(255, 255, 255, 0.5);
+    padding-top: 2px;
+    display: none;
+}
+
+
+.main-nav .navbar-light .navbar-toogleButton-normal {
+    display: inline-block;
+    padding: 8px 2px 0 2px;
+    cursor: pointer;
+}
+
+.navbar-toogleButton-normal:hover {
+    color: rgba(255, 255, 255, 1);
+    color: #fff;
+}
+
+
+
+/* -------------------------------- */
+/* Responsive queries */
+/* -------------------------------- */
+
+
+@media only screen and (max-width: 320px) {
+    
+    header {background-image:url("../img/img_hero_xsmall.jpg");}
+    
+    .main-nav {height: 60px; background-color: #000;}
+    .main-nav .navbar-logo {height: 35px;}
+    
+    .main-nav .navbar-light .navbar-toogleButton-normal {display: none;}
+    .main-nav .navbar-light .navbar-toogleButton-mobile {display: inline-block;}
+    
+}
+
+@media only screen and (min-width: 321px) and (max-width: 768px) {
+    
+    .main-nav .navbar-logo {height: 35px;}
+    .main-nav { height: 60px; background-color: #000; transition: background-color: 0.3s;} 
+    
+    
+    
+    header {background-image:url("../img/img_hero_small.jpg"); min-height: 50vh;}
+    
+    .main-nav-links .nav-item .nav-link {font-size: 50%;}   
+    .main-nav-links .nav-item {padding-right: 10px;}
+  
+    .main-nav .navbar-light .navbar-toogleButton-normal {display: none;}
+    .main-nav .navbar-light .navbar-toogleButton-mobile {display: inline-block;}
+    
+     
+}
+
+@media only screen and (min-width: 769px) and (max-width: 992px)  {
+    
+    .main-nav {transition: height 0.3s, background-color 0.3s; height: 60px; background-color: #000;}
+    .main-nav .navbar-logo {transition: height 0.3s; height: 35px;}
+    
+    header {background-image:url("../img/img_hero_medium.jpg"); height: 85vh;}
+    
+    .main-nav-links .nav-item .nav-link {font-size: 70%; transition: font-size 0.2s}   
+    .main-nav-links .nav-item {padding-right: 15px;} 
+    
+    
+    
+}
+
+@media only screen and (min-width: 993px) and (max-width: 1199px)  { 
+    
+    .main-nav {transition: height 0.3s, background-color 0.3s}
+    .main-nav .navbar-logo {transition: height 0.3s;}
+    
+    
+    .main-nav-links .nav-item .nav-link {font-size: 80%; transition: font-size 0.2s}   
+    .main-nav-links .nav-item {padding-right: 5px;}
+    .main-nav-links {margin-left: 15px;}
+}
+
+@media only screen and (min-width: 1200px)  {
+    .main-nav-links .nav-item .nav-link {transition: font-size 0.2s}  
+}
+
