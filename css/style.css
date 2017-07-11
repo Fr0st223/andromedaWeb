@@ -134,13 +134,19 @@ header .top-bar span {
 /* Main navbar rules */
 /* -------------------------------- */
 
-
-.main-nav {
-    background: linear-gradient(to top, transparent 0, rgba(0,0,0,.7) 80px, rgba(0,0,0,.8) 120px); 
-    height: 100px;
+.main-nav-wrapper {
+    min-height: 100%;
+    position: relative;
 }
 
-.main-nav .navbar-logo {
+.main-nav { 
+    height: 100px;
+    background: linear-gradient(to top, transparent 0, rgba(0,0,0,.7) 80px, rgba(0,0,0,.8) 120px); 
+}
+
+.main-nav-wrapper .navbar-logo,
+.main-nav .navbar-logo
+{
     height:  50px;
     width: auto;
 }
@@ -172,10 +178,14 @@ header .top-bar span {
     vertical-align: middle;
 }
 
+
+/* -------------------------------- */
+/* Mobile navbar rules */
+/* -------------------------------- */
+
 .navbar-toggleButton .nav-link {
     font-family: 'MassEffect123-Light', 'Lato', 'Roboto', 'Arial', sans-serif;
-    text-decoration: none;
-        
+    text-decoration: none;       
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.5);
     transition: color 0.3s;
@@ -216,6 +226,59 @@ header .top-bar span {
 }
 
 
+.section-hero {
+    height: 200px;
+}
+
+
+
+
+/* The side navigation menu */
+.navbar-drawer {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: absolute; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #000;
+    overflow: hidden; /* Disable horizontal scroll */
+     /* 0.5 second transition effect to slide in the sidenav */
+    transition: 0.3s;
+    text-align: center;
+}
+
+
+/* The navigation menu links */
+.navbar-drawer a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: color 0.5s
+}
+
+/* When you mouse over the navigation links, change their color */
+.navbar-drawer a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.navbar-drawer .closebtn {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+
+.main-nav-wrapper .navbarDrawer-logo {
+    position: absolute;
+    top: 5px;
+}
+
 
 /* -------------------------------- */
 /* Responsive */
@@ -243,6 +306,13 @@ header .top-bar span {
         left: 0;
     }
     
+    #navbarNav {display: none;}
+    
+    .navbar-drawer[class*='enableResize']
+    {
+        width: 100%;
+    }
+    
 }
 
 @media only screen and (min-width: 321px) and (max-width: 768px) {
@@ -252,7 +322,7 @@ header .top-bar span {
     
     
     
-    header {background-image:url("../img/img_hero_small.jpg"); min-height: 50vh;}
+    header {background-image:url("../img/img_hero_small.jpg");}
     
     .main-nav-links .nav-item .nav-link {font-size: 50%;}   
     .main-nav-links .nav-item {padding-right: 10px;}
@@ -270,6 +340,15 @@ header .top-bar span {
         bottom: 0;
         left: 0;
     }
+    
+    #navbarNav {display: none;}
+    
+    .navbar-drawer[class*='enableResize']
+    {
+        width: 100%;
+    }
+    
+    
      
 }
 
@@ -278,12 +357,18 @@ header .top-bar span {
     .main-nav {transition: height 0.3s, background-color 0.3s; height: 60px; background-color: #000;}
     .main-nav .navbar-logo {transition: height 0.3s; height: 35px;}
     
-    header {background-image:url("../img/img_hero_medium.jpg"); height: 85vh;}
+    header {background-image:url("../img/img_hero_medium.jpg");}
     
     .main-nav-links .nav-item .nav-link {font-size: 70%; transition: font-size 0.2s}   
     .main-nav-links .nav-item {padding-right: 15px;} 
     
+    #navbarNav {display: none;}
     
+    
+    .navbar-drawer[class*='enableResize']
+    {
+        width: 40%;
+    }
     
 }
 
@@ -293,12 +378,26 @@ header .top-bar span {
     .main-nav .navbar-logo {transition: height 0.3s;}
     
     
-    .main-nav-links .nav-item .nav-link {font-size: 80%; transition: font-size 0.2s}   
-    .main-nav-links .nav-item {padding-right: 5px;}
-    .main-nav-links {margin-left: 15px;}
+    .main-nav-links .nav-item .nav-link {font-size: 78%; transition: font-size 0.2s}   
+    .main-nav-links .nav-item {padding-right: 4px;}
+    .main-nav-links {margin-left: 14px;}
+    
+    #navbarNav {display: none;}
+    
+    .navbar-drawer[class*='enableResize']
+    {
+        width: 35%;
+    }
 }
 
 @media only screen and (min-width: 1200px)  {
     .main-nav-links .nav-item .nav-link {transition: font-size 0.2s}  
+    
+    #navbarNav {display: none;}
+    
+    .navbar-drawer[class*='enableResize']
+    {
+        width: 20%;
+    }
 }
 
